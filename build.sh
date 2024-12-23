@@ -3,7 +3,8 @@
 # Build image that contains all dependencies needed to build esp32-arduino-matter
 # You can configure dependencies in scripts/download.sh file
 # Note: this image takes around 32GB. Building image and running it may take few hours!
-docker build -t esp32-arduino-matter-builder .
+#DOCKER_BUILDKIT=1 docker buildx build -t esp32-arduino-matter-builder .
+DOCKER_BUILDKIT=1 docker buildx build --load --tag fh-esp32c3 --no-cache --builder cloud-filterhealth-esp32c3 .
 
 # Now as dependencies are downloaded, installed and cached,
 # you can experiment with scripts/prepare/apply_patch.sh, stub_project,
@@ -15,4 +16,4 @@ docker run -v ${PWD}/lib_files:/root/lib_files \
     -v ${PWD}/build.sh:/root/build.sh \
     -v ${PWD}/exported_artifacts:/root/exported_artifacts \
     -v ${PWD}/.git:/root/.git \
-    esp32-arduino-matter-builder 
+    esp32-arduino-matter-builder

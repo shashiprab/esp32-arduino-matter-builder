@@ -15,7 +15,7 @@ cp exported_artifacts/static_non_arduino_libs/libesp_matter* $workdir/$target
 # (because there is already libbt in arduino-esp32)
 cp -r exported_artifacts/static_arduino_libs/libbt.a $workdir/$target/libbt_nimble.a
 # copy mbed libs which are for some reason needed to link Matter
-# and those shipped with arduino-esp32 aren't fully working 
+# and those shipped with arduino-esp32 aren't fully working
 cp -r exported_artifacts/static_arduino_libs/libmbedcrypto.a $workdir/$target/libmbedcrypto_matter.a
 
 rm -rf $workdir/$target/*test*
