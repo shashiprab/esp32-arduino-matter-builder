@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # CONFIG_FEATURE_CACHE_TX_BUF_BIT takes a lot of RAM (causing OOM with Matter) and is enabled only when
-# CONFIG_ESP32_SPIRAM_SUPPORT is enabled. SPIRAM is enabled with default Arduino sdkconfig, 
+# CONFIG_ESP32_SPIRAM_SUPPORT is enabled. SPIRAM is enabled with default Arduino sdkconfig,
 # so we have to manually remove this flag.
 
 FIND="cfg = WIFI_INIT_CONFIG_DEFAULT();"

@@ -36,7 +36,7 @@ mkdir $out
 
 set -- $INCLUDES
 for item; do
-    # Don't export headers from esp-idf 
+    # Don't export headers from esp-idf
     # and in root of Matter dir (compile commands has included main Matter folder with all headers,
     # including huge third_party folder, which takes ages to copy all headers)
     if [[ $item != *"$PWD/tools/esp-idf/"* ]] && [[ $item != *"$PWD/tools/esp-matter/connectedhomeip/connectedhomeip" ]]; then
